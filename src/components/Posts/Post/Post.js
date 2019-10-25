@@ -1,13 +1,22 @@
 import React from 'react';
-
 import styles from './Post.module.css';
+import {
+    Card, CardText, CardBody,
+    CardTitle, Row, Col
+  } from 'reactstrap';
 
 const post = (props) => (
-    <article className={styles.Post}>
-        <h1>{props.title}</h1>
-        <h1>{props.location}</h1>
-        <br></br>
-    </article>
-);
+     
+         <Col sm="4">
+         <Card body>
+            <CardBody>
+                <CardTitle>Title: {props.title}</CardTitle>
+                <CardText>Content: {props.content}</CardText>
+                <CardText>Location: {props.location}</CardText>
+                <CardText>Author: {props.author}</CardText>
+            </CardBody>
+        </Card>
+         </Col>
+)
 
 export default post;

@@ -20,7 +20,7 @@ class NewPost extends Component {
        // e.preventDefault();
         const data = {
             title: this.state.title,
-            body: this.state.content,
+            content: this.state.content,
             author: this.state.author,
             location: this.state.location
         }
