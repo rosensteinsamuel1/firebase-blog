@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import * as firebase from "firebase";
 import config from '../../firebase-config'
 import Post from '../../components/Posts/Post/Post'
+import NewPost from '../../components/NewPost/NewPost'
 
 class Blog extends Component {
 
@@ -45,6 +46,9 @@ class Blog extends Component {
     return (
       <div className="App">
           <h1>Welcome to the Craigslist/Etsy Clone!</h1>
+          <div>
+            <NewPost firebaseRef={firebase.database().ref('posts')}/>
+          </div>
           {posts}
       </div>
     );
