@@ -23,3 +23,11 @@
     margin: 16px 0;
     color: #ccc;
 }
+
+.cardTitle {
+    margin-top: .75rem;
+}
+
+.cards {
+    margin: 1rem .5rem;
+}

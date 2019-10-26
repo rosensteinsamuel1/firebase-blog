@@ -9,7 +9,7 @@ class NewPost extends Component {
         this.state = {
             title: '',
             content: '',
-            author: 'Max',
+            author: 'Sam',
             location: ''
         }
 
@@ -36,7 +36,7 @@ class NewPost extends Component {
                 <label>Content</label>
                 <textarea rows="4" value={this.state.content} onChange={(event) => this.setState({content: event.target.value})} />
                 <label>Author</label>
-                <textarea rows="4" value={this.state.author} onChange={(event) => this.setState({author: event.target.value})} />
+                <textarea rows="1" value={this.state.author} onChange={(event) => this.setState({author: event.target.value})} />
                 <label>Location</label>
                 <select value={this.state.location} onChange={(event) => this.setState({location: event.target.value})}>
                     <option value="">--Choose Location--</option>
