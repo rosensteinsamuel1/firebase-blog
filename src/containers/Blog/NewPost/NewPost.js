@@ -15,6 +15,10 @@ class NewPost extends Component {
 
         this.submitHandler = this.submitHandler.bind(this);
     }
+
+    componentDidMount() {
+        console.log('[newpost.js]' + this.props)
+    }
     
     submitHandler = () => { //(e)
        // e.preventDefault();

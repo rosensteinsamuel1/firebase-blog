@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import * as firebase from "firebase";
-
-import {Route} from 'react-router-dom'
+import {Route, NavLink} from 'react-router-dom'
 import Posts from '../Blog/Posts/Posts'
 import NewPost from './NewPost/NewPost'
+import FullPost from './FullPost/FullPost'
 
 import styles from './Blog.module.css'
 
@@ -27,16 +26,23 @@ class Blog extends Component {
         <header>
           <nav>
             <ul>
-            <li>
-              <a href="/">Home</a>
-              </li>
-              <li>
-              <a href="/new-post">New Post</a>
-              </li>
+            <li> <NavLink to="/"
+                exact
+                activeClassName={styles.MyActive}
+                activeStyle={{
+                  color: '#FA923F',
+                  textDecoration: 'underline'
+                }}>Home</NavLink></li>
+            <li> <NavLink to={{
+              pathname: '/new-post'
+            }}>New Post</NavLink></li>
+            <li></li>
             </ul>
           </nav>
         </header>
         <Route path="/" exact component={Posts}/>
+        <Route path="/new-post" component={NewPost} />
+        <Route path ="/:id" exact component={FullPost} />
           {/* <h1>Welcome to the Craigslist/Etsy Clone!</h1>
           <div>
             <NewPost firebaseRef={firebase.database().ref('posts')}/>

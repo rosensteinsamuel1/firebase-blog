@@ -6,7 +6,6 @@ import {
   } from 'reactstrap';
 
 const post = (props) => (
-     
          <Col className = {"col-sm-4 d-flex align-items-stretch"}>
           <div className = {styles.cards} >
               {/* " sm="4"> */}
