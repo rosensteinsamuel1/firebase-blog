@@ -17,6 +17,7 @@ const post = (props) => (
                 <CardTitle className={styles.cardTitle}><b>{props.title}</b></CardTitle>
                 <hr></hr>
                 <CardText>{props.content}</CardText>
+                <CardText>Category: {props.category}</CardText>
                 <CardText>Location: {props.location}</CardText>
                 <CardText>Author: {props.author}</CardText>
             </CardBody>

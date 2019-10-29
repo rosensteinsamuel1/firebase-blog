@@ -8,6 +8,7 @@
     box-sizing: border-box;
     cursor: pointer;
     display: inline-block;
+    color: blue;
 }
 
 .Card {
@@ -26,6 +27,7 @@
 
 .cardTitle {
     margin-top: .75rem;
+    color: blue;
 }
 
 .cards {

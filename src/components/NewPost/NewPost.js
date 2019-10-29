@@ -10,7 +10,8 @@ class NewPost extends Component {
             title: '',
             content: '',
             author: 'Sam',
-            location: ''
+            location: '',
+            category: ''
         }
 
         this.submitHandler = this.submitHandler.bind(this);
@@ -22,7 +23,8 @@ class NewPost extends Component {
             title: this.state.title,
             content: this.state.content,
             author: this.state.author,
-            location: this.state.location
+            location: this.state.location,
+            category: this.state.category
         }
         this.props.firebaseRef.push(data);
     }
@@ -30,11 +32,19 @@ class NewPost extends Component {
     render () {
         return (
             <div className={styles.NewPost}>
-                <h1>New Post</h1>
+                <h3>New Post</h3>
                 <label>Title</label>
                 <input type="text" value={this.state.title} onChange={(event) => this.setState({title: event.target.value})} />
                 <label>Content</label>
                 <textarea rows="4" value={this.state.content} onChange={(event) => this.setState({content: event.target.value})} />
+                <label>Category</label>
+                <select value={this.state.category} onChange={(event) => this.setState({location: event.target.value})}>
+                    <option value="">--Choose Location--</option>
+                    <option value="Community">Community</option>
+                    <option value="Housing">Housing</option>
+                    <option value="Jobs">Jobs</option>
+                    <option value="Services">Services</option>
+                </select>
                 <label>Author</label>
                 <textarea rows="1" value={this.state.author} onChange={(event) => this.setState({author: event.target.value})} />
                 <label>Location</label>

@@ -4,8 +4,6 @@ import config from '../../firebase-config'
 import Post from '../../components/Posts/Post/Post'
 import NewPost from '../../components/NewPost/NewPost'
 
-import styles from './Blog.module.css'
-
 import {Row} from 'reactstrap';
 
 class Blog extends Component {
@@ -45,7 +43,8 @@ class Blog extends Component {
                 title={post.title}
                 location={post.location}
                 author={post.author}
-                content={post.content}/>;
+                content={post.content}
+                category={post.category}/>;
         });
     }
 
@@ -55,6 +54,7 @@ class Blog extends Component {
           <div>
             <NewPost firebaseRef={firebase.database().ref('posts')}/>
           </div>
+          <h3>Local Listings</h3> 
           <Row className="cards">
                {posts}
           </Row>
