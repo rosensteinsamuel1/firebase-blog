@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import * as firebase from "firebase";
-import config from '../../firebase-config'
-import Post from '../../components/Posts/Post/Post'
-import NewPost from '../../components/NewPost/NewPost'
+
+import {Route} from 'react-router-dom'
+import Posts from '../Blog/Posts/Posts'
+import NewPost from './NewPost/NewPost'
 
 import styles from './Blog.module.css'
-
-import {Row} from 'reactstrap';
 
 class Blog extends Component {
 
@@ -18,46 +17,31 @@ class Blog extends Component {
     }
 
     // Initialize Firebase
-    if (!firebase.apps.length) {
-        firebase.initializeApp(config);
-     }
-  }
-
-  componentDidMount() {
-    let postsRef = firebase.database().ref('posts');
-    let _this = this
-    postsRef.on('value', function(snapshot) {
-      console.log(Object.values(snapshot.val()));
   
-      _this.setState({
-        posts: Object.values(snapshot.val()),
-        loading: false
-        });
-    });
   }
 
   render() {
 
-    let posts = <p style={{textAlign: 'center'}}>Something went terribly wrong!</p>
-    if (!this.state.error) {
-        posts = this.state.posts.map(post => {
-            return <Post
-                title={post.title}
-                location={post.location}
-                author={post.author}
-                content={post.content}/>;
-        });
-    }
-
     return (
-      <div className="App">
-          <h1>Welcome to the Craigslist/Etsy Clone!</h1>
+      <div className={styles.Blog}>
+        <header>
+          <nav>
+            <ul>
+            <li>
+              <a href="/">Home</a>
+              </li>
+              <li>
+              <a href="/new-post">New Post</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <Route path="/" exact component={Posts}/>
+          {/* <h1>Welcome to the Craigslist/Etsy Clone!</h1>
           <div>
             <NewPost firebaseRef={firebase.database().ref('posts')}/>
           </div>
-          <Row className="cards">
-               {posts}
-          </Row>
+          <Posts firebaseRef={firebase.database().ref('posts')} /> */}
       </div>
     );
   }

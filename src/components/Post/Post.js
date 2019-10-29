@@ -11,7 +11,7 @@ const post = (props) => (
           <div className = {styles.cards} >
               {/* " sm="4"> */}
          <Card body>
-            <CardBody> 
+            <CardBody > 
                 <CardImg src= "https://images.craigslist.org/00t0t_1gFjaagzafS_600x450.jpg" alt="">
                 </CardImg>
                 <CardTitle className={styles.cardTitle}><b>{props.title}</b></CardTitle>
